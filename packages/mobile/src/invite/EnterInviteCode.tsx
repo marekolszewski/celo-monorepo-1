@@ -190,11 +190,13 @@ export class EnterInviteCode extends React.Component<Props, State> {
             (!(this.state.messageAppOpened && this.state.validCodeInClipboard) ? (
               <View>
                 <Text style={[styles.body, styles.hint]}>
-                  <Text style={fontStyles.bodySmallSemiBold}>{t('inviteCodeText.hint.0')}</Text>
-                  {t('inviteCodeText.hint.1')}
+                  <Text style={fontStyles.bodySmallSemiBold}>
+                    {t('inviteCodeText.openMessages.hint.0')}
+                  </Text>
+                  {t('inviteCodeText.openMessages.hint.1')}
                 </Text>
                 <SmallButton
-                  text={t('openMessages')}
+                  text={t('inviteCodeText.openMessages.message')}
                   testID={'openMessageButton'}
                   onPress={this.openMessage}
                   solid={true}
@@ -203,12 +205,14 @@ export class EnterInviteCode extends React.Component<Props, State> {
               </View>
             ) : (
               <View>
-                <Text style={[styles.body, styles.hint]}>{''}</Text>
+                <Text style={[styles.body, styles.hint]}>
+                  {t('inviteCodeText.pasteInviteCode.hint')}
+                </Text>
                 <SmallButton
-                  text={t('pasteInviteCode')}
+                  text={t('inviteCodeText.pasteInviteCode.message')}
                   testID={'pasteMessageButton'}
                   onPress={this.onPaste}
-                  solid={true}
+                  solid={false}
                   style={styles.button}
                 />
               </View>

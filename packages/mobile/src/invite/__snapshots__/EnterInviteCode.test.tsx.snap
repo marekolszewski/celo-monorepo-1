@@ -214,9 +214,9 @@ exports[`EnterInviteCode Screen renders correctly 1`] = `
               }
             }
           >
-            inviteCodeText.hint.0
+            inviteCodeText.openMessages.hint.0
           </Text>
-          inviteCodeText.hint.1
+          inviteCodeText.openMessages.hint.1
         </Text>
         <View
           accessible={true}
@@ -271,7 +271,7 @@ exports[`EnterInviteCode Screen renders correctly 1`] = `
               ]
             }
           >
-            openMessages
+            inviteCodeText.openMessages.message
           </Text>
         </View>
       </View>
@@ -718,9 +718,9 @@ exports[`EnterInviteCode Screen renders with an error 1`] = `
               }
             }
           >
-            inviteCodeText.hint.0
+            inviteCodeText.openMessages.hint.0
           </Text>
-          inviteCodeText.hint.1
+          inviteCodeText.openMessages.hint.1
         </Text>
         <View
           accessible={true}
@@ -775,7 +775,7 @@ exports[`EnterInviteCode Screen renders with an error 1`] = `
               ]
             }
           >
-            openMessages
+            inviteCodeText.openMessages.message
           </Text>
         </View>
       </View>

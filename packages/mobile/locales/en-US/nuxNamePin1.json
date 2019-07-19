@@ -24,9 +24,16 @@
       "0": "Copy invite ",
       "1": "from Messages App and come back"
     },
-    "hint": {
-      "0": "Hint ",
-      "1": "Copy the whole SMS message"
+    "openMessages": {
+      "message": "Open Messages",
+      "hint": {
+        "0": "Hint ",
+        "1": "Copy the whole SMS message"
+      }
+    },
+    "pasteInviteCode": {
+      "message": "Paste Invite Code!",
+      "hint": "Looks like you've copied a code"
     },
     "validating": {
       "0": "Great! ",
@@ -39,8 +46,6 @@
       "2": "celo.org/build/wallet"
     }
   },
-  "openMessages": "Open Messages",
-  "pasteInviteCode": "Paste Invite Code!",
   "enterFullName": "Please enter your first and last name",
   "fullName": "Full Name",
   "InvitationCode": "Invitation Code",
