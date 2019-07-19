@@ -30,6 +30,8 @@ const initialState = {
   verify: {},
   web3: {},
   account: {},
+  invite: {},
+  identity: {},
 }
 
 const numberVerified = {
@@ -45,6 +47,14 @@ const numberVerified = {
   },
   account: {
     pincodeSet: true,
+    e164PhoneNumber: '+1234',
+  },
+  invite: {
+    redeemComplete: true,
+  },
+  identity: {
+    startedVerification: false,
+    askedContactsPermission: true,
   },
 }
 

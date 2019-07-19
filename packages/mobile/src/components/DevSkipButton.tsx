@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     height: 35,
     zIndex: 100,
     paddingRight: 10,
-    paddingTop: 10,
   },
   devButtonContent: {
     flex: 1,

@@ -34,7 +34,6 @@ export class Countries {
     this.language = language ? language.toLocaleLowerCase() : 'en-us'
     this.countryMap = new Map()
     this.localizedCountries = Array()
-
     this.assignCountries()
   }
 
@@ -111,7 +110,10 @@ export class Countries {
     return this.localizedCountries
       .filter(
         (c: LocalizedCountry) =>
-          c.names && c.names[lng] !== undefined && c.names[lng].toLowerCase().startsWith(query)
+          c.names &&
+          c.names[lng] !== undefined &&
+          (c.names[lng].toLowerCase().startsWith(query) ||
+            c.countryCallingCodes[0].startsWith('+' + query))
       )
       .map((c: LocalizedCountry) => c.alpha2)
   }

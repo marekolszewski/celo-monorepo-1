@@ -94,6 +94,13 @@ const mapStateToProps = (state: RootState): StateProps => {
 }
 
 export class Verifying extends React.Component<Props, State> {
+  static navigationOptions = {
+    headerStyle: {
+      elevation: 0,
+    },
+    header: null,
+  }
+
   state = {
     useManualEntry: false,
   }
@@ -152,7 +159,7 @@ export class Verifying extends React.Component<Props, State> {
 
   onCancelVerification = () => {
     this.props.cancelVerification()
-    navigate(Screens.VerifyInput)
+    navigate(Screens.VerifyEducation)
   }
 
   onRetryVerification = () => {
