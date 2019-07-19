@@ -21,6 +21,8 @@ interface Props {
   inputPhonePlaceholder?: string
   lng?: string
   callingCode?: boolean
+  defaultCountryCode?: string
+  defaultPhoneNumber?: string
 }
 
 interface State {
@@ -45,6 +47,18 @@ export default class PhoneNumberInput extends React.Component<Props, State> {
     if (this.props.defaultCountry) {
       this.onChangeCountryQuery(this.props.defaultCountry)
     }
+
+    if (this.props.defaultCountryCode) {
+      const country = this.state.countries.getCountryByPhoneCountryCode(
+        this.props.defaultCountryCode
+      )
+
+      this.onChangeCountryQuery(country.displayName)
+    }
+
+    if (this.props.defaultPhoneNumber) {
+      this.onChangePhoneNumber(this.props.defaultPhoneNumber)
+    }
   }
 
   onChangeCountryQuery = (countryQuery: string) => {
@@ -67,6 +81,7 @@ export default class PhoneNumberInput extends React.Component<Props, State> {
         () => this.onChangePhoneNumber(this.state.phoneNumber)
       )
       this.props.setCountryCode(countryCallingCode)
+      console.log('Setting Country Code to be', countryCallingCode)
       if (this.props.setRegionCode) {
         this.props.setRegionCode(regionCode)
       }

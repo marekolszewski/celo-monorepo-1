@@ -238,6 +238,12 @@ export class JoinCelo extends React.Component<Props, State> {
               inputPhonePlaceholder={t('phoneNumber')}
               callingCode={true}
               lng={language}
+              defaultCountryCode={
+                this.props.cachedCountryCode !== '' ? this.props.cachedCountryCode : undefined
+              }
+              defaultPhoneNumber={
+                this.props.cachedNumber !== '' ? this.props.cachedNumber : undefined
+              }
             />
           </View>
         </ScrollView>

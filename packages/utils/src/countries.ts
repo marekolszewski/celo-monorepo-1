@@ -78,6 +78,18 @@ export class Countries {
     return country || EMPTY_COUNTRY
   }
 
+  getCountryByPhoneCountryCode(countryCode: string): LocalizedCountry {
+    if (!countryCode) {
+      return EMPTY_COUNTRY
+    }
+
+    const country = this.localizedCountries.find((c: LocalizedCountry) =>
+      c.countryCallingCodes.includes(countryCode)
+    )
+
+    return country || EMPTY_COUNTRY
+  }
+
   getCountryByCode(countryCode: string): LocalizedCountry {
     const country = this.countryMap.get(countryCode)
 
