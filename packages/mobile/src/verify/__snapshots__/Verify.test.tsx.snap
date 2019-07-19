@@ -19,6 +19,7 @@ exports[`Verifying process renders the fully verified state correctly 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,
@@ -534,6 +535,7 @@ exports[`Verifying process renders the initial verifying state correctly 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,
@@ -1013,6 +1015,7 @@ exports[`Verifying process renders the partially verified state correctly 1`] = 
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,
@@ -1516,6 +1519,7 @@ exports[`Verifying process renders the verification error state correctly 1`] = 
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,
@@ -1909,6 +1913,7 @@ exports[`renders the Education step correctly 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,
@@ -2226,6 +2231,7 @@ exports[`renders the Input step correctly 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,
@@ -2616,6 +2622,7 @@ exports[`renders the Verified step correctly 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,

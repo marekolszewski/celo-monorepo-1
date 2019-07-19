@@ -37,7 +37,6 @@ import {
   InputAttestationCodeAction,
   ReceiveAttestationMessageAction,
   resetVerification,
-  startVerification as startVerificationState,
 } from 'src/identity/actions'
 import { attestationCodesSelector } from 'src/identity/reducer'
 import { startAutoSmsRetrieval } from 'src/identity/smsRetrieval'
@@ -74,7 +73,6 @@ export function* waitForUserVerified() {
 }
 
 export function* startVerification() {
-  yield put(startVerificationState())
   yield put(resetVerification())
   yield call(getConnectedAccount)
 

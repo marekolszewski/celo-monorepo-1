@@ -15,6 +15,7 @@ exports[`Pincode renders correctly for education 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,

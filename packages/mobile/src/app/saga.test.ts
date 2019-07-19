@@ -104,4 +104,5 @@ describe('Upload Comment Key Saga', () => {
 
 navigationSagaTest('Navigates to the nux stack with no state', null, Stacks.NuxStack)
 navigationSagaTest('Navigates to the nux stack with no language', initialState, Stacks.NuxStack)
+
 navigationSagaTest('Navigates to the verify screen', numberVerified, Screens.VerifyEducation)

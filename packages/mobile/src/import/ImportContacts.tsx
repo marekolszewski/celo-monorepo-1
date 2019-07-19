@@ -39,10 +39,10 @@ class ImportContacts extends React.Component<Props> {
     navigate(Screens.VerifyEducation)
   }
 
-  onPressEnable = () => {
+  onPressEnable = async () => {
     // TODO (Sally) Import contacts duplication
-    requestContactsPermission().then((response) => {
-      this.props.importContacts()
+    requestContactsPermission().then(async (response) => {
+      await this.props.importContacts()
       this.nextScreen()
     })
   }

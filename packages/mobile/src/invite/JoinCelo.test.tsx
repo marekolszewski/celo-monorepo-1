@@ -74,4 +74,62 @@ describe('JoinCeloScreen', () => {
     fireEvent.changeText(wrapper.getByTestId('PhoneNumberField'), '12345')
     expect(wrapper.queryAllByProps({ disabled: true }).length).toBeGreaterThan(0)
   })
+
+  it('calls account actions when input different from cached', () => {
+    const setName = jest.fn()
+    const setPhoneNumber = jest.fn()
+
+    const wrapper = render(
+      <Provider store={createMockStore()}>
+        <JoinCeloClass
+          showError={jest.fn()}
+          hideAlert={jest.fn()}
+          setPhoneNumber={setPhoneNumber}
+          setName={setName}
+          error={null}
+          language={'en-us'}
+          cachedName={'Bob Doe'}
+          cachedNumber={'+14151234567'}
+          cachedCountryCode={'+1'}
+          pincodeSet={false}
+          redeemComplete={jest.fn()}
+          {...getMockI18nProps()}
+        />
+      </Provider>
+    )
+    fireEvent.changeText(wrapper.getByTestId('NameEntry'), 'John Doe')
+    fireEvent.changeText(wrapper.getByTestId('PhoneNumberField'), '+14155556666')
+    fireEvent.press(wrapper.getByTestId('JoinCeloContinueButton'))
+    expect(setName).toHaveBeenCalledWith('John Doe')
+    expect(setPhoneNumber).toHaveBeenCalledWith('+14155556666', '+1')
+  })
+
+  it('does not calls account actions when input same as cached', () => {
+    const setName = jest.fn()
+    const setPhoneNumber = jest.fn()
+
+    const wrapper = render(
+      <Provider store={createMockStore()}>
+        <JoinCeloClass
+          showError={jest.fn()}
+          hideAlert={jest.fn()}
+          setPhoneNumber={setPhoneNumber}
+          setName={setName}
+          error={null}
+          language={'en-us'}
+          cachedName={'John Doe'}
+          cachedNumber={'+14155556666'}
+          cachedCountryCode={'+1'}
+          pincodeSet={false}
+          redeemComplete={jest.fn()}
+          {...getMockI18nProps()}
+        />
+      </Provider>
+    )
+    fireEvent.changeText(wrapper.getByTestId('NameEntry'), 'John Doe')
+    fireEvent.changeText(wrapper.getByTestId('PhoneNumberField'), '+14155556666')
+    fireEvent.press(wrapper.getByTestId('JoinCeloContinueButton'))
+    expect(setName).not.toHaveBeenCalledWith('John Doe')
+    expect(setPhoneNumber).not.toHaveBeenCalledWith('+14151234567', '+1')
+  })
 })

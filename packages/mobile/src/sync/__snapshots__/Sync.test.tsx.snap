@@ -19,6 +19,7 @@ exports[`renders correctly when dev Mode disabled 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,
@@ -302,6 +303,7 @@ exports[`renders correctly when dev Mode enabled 1`] = `
       Object {
         "height": 35,
         "paddingRight": 10,
+        "paddingTop": 10,
         "position": "absolute",
         "right": 0,
         "top": 0,

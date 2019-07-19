@@ -1,4 +1,4 @@
-import { BtnTypes } from '@celo/react-components/components/Button'
+import Button, { BtnTypes } from '@celo/react-components/components/Button'
 import Link from '@celo/react-components/components/Link'
 import SmallButton from '@celo/react-components/components/SmallButton'
 import InviteCodeIcon from '@celo/react-components/icons/InviteCodeIcon'
@@ -24,7 +24,6 @@ import { componentWithAnalytics } from 'src/analytics/wrapper'
 import { ErrorMessages } from 'src/app/ErrorMessages'
 import DevSkipButton from 'src/components/DevSkipButton'
 import { ERROR_BANNER_DURATION } from 'src/config'
-import GethAwareButton from 'src/geth/GethAwareButton'
 import { Namespaces } from 'src/i18n'
 import { redeemInvite } from 'src/invite/actions'
 import { extractValidInviteCode } from 'src/invite/utils'
@@ -112,11 +111,11 @@ export class EnterInviteCode extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    AppState.addEventListener('change', this._handleValidCodeInClipboard)
+    AppState.addEventListener('change', this.handleValidCodeInClipboard)
   }
 
   componentWillUnmount() {
-    AppState.addEventListener('change', this._handleValidCodeInClipboard)
+    AppState.addEventListener('change', this.handleValidCodeInClipboard)
   }
 
   openMessage = () => {
@@ -126,7 +125,7 @@ export class EnterInviteCode extends React.Component<Props, State> {
     SendIntentAndroid.openSMSApp()
   }
 
-  _handleValidCodeInClipboard = async (nextAppState: AppStateStatus) => {
+  handleValidCodeInClipboard = async (nextAppState: AppStateStatus) => {
     if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
       const message = await Clipboard.getString()
       const validCode = extractValidInviteCode(message)
@@ -245,7 +244,7 @@ export class EnterInviteCode extends React.Component<Props, State> {
               {t('inviteCodeText.askForInvite.2')}
             </Text>
           </Text>
-          <GethAwareButton
+          <Button
             onPress={this.onContinue}
             text={t('continue')}
             standard={false}

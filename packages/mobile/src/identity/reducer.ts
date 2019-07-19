@@ -32,17 +32,13 @@ const initialState = {
 
 export const reducer = (state: State | undefined = initialState, action: ActionTypes): State => {
   switch (action.type) {
-    case Actions.START_VERIFICATION:
-      return {
-        ...state,
-        startedVerification: true,
-      }
     case Actions.RESET_VERIFICATION:
       return {
         ...state,
         attestationCodes: [],
         numCompleteAttestations: 0,
         verificationFailed: false,
+        startedVerification: true,
       }
     case Actions.END_VERIFICATION:
       return action.success
@@ -54,8 +50,8 @@ export const reducer = (state: State | undefined = initialState, action: ActionT
         : {
             ...state,
             verificationFailed: true,
+            startedVerification: false,
           }
-
     case Actions.INPUT_ATTESTATION_CODE:
       return {
         ...state,
